@@ -19,10 +19,6 @@
         <title>Mech Infiltration</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/1.2.0/css/uikit.gradient.min.css" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-		
-		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
-		<script type="text/javascript" src="js/scrolling.js"></script>
-		
     </head>
 
     <body>
@@ -349,6 +345,37 @@
                 });
             });
         </script>
+        <script type="text/javascript">
+			$(function() {
+
+				var offset = $("#navigation").offset();
+				var topPadding = 15;
+
+				$(window).scroll(function() {
+				
+					if ($(window).scrollTop() > offset.top) {
+					
+						$("#navigation").stop().animate({
+						
+							marginTop: $(window).scrollTop() - offset.top + topPadding
+						
+						});
+					
+					} else {
+					
+						$("#navigation").stop().animate({
+						
+							marginTop: 0
+						
+						});
+					
+					}
+					
+						
+				});
+
+			});
+		</script>
 
         
     </body>
